@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<script>(function(){!function(l){function r(b,a){var h=(65535&b)+(65535&a);return(b>>16)+(a>>16)+(h>>16)<<16|65535&h}function p(b,a,h,q,x,g){b=r(r(a,b),r(q,g));return r(b<<x|b>>>32-x,h)}function g(b,a,h,q,g,k,c){return p(a&h|~a&q,b,a,g,k,c)}function k(b,a,h,q,g,k,c){return p(a&q|h&~q,b,a,g,k,c)}function m(b,a,h,q,g,k,c){return p(a^h^q,b,a,g,k,c)}function n(b,a,h,q,g,k,c){return p(h^(a|~q),b,a,g,k,c)}function u(b,a){var h,q,l,p;b[a>>5]|=128<<a%32;b[14+(a+64>>>9<<4)]=a;var c=1732584193,d=-271733879,e=-1732584194,
+f=271733878;for(a=0;a<b.length;a+=16)d=n(d=n(d=n(d=n(d=m(d=m(d=m(d=m(d=k(d=k(d=k(d=k(d=g(d=g(d=g(d=g(q=d,e=g(l=e,f=g(p=f,c=g(h=c,d,e,f,b[a],7,-680876936),d,e,b[a+1],12,-389564586),c,d,b[a+2],17,606105819),f,c,b[a+3],22,-1044525330),e=g(e,f=g(f,c=g(c,d,e,f,b[a+4],7,-176418897),d,e,b[a+5],12,1200080426),c,d,b[a+6],17,-1473231341),f,c,b[a+7],22,-45705983),e=g(e,f=g(f,c=g(c,d,e,f,b[a+8],7,1770035416),d,e,b[a+9],12,-1958414417),c,d,b[a+10],17,-42063),f,c,b[a+11],22,-1990404162),e=g(e,f=g(f,c=g(c,d,e,f,
+b[a+12],7,1804603682),d,e,b[a+13],12,-40341101),c,d,b[a+14],17,-1502002290),f,c,b[a+15],22,1236535329),e=k(e,f=k(f,c=k(c,d,e,f,b[a+1],5,-165796510),d,e,b[a+6],9,-1069501632),c,d,b[a+11],14,643717713),f,c,b[a],20,-373897302),e=k(e,f=k(f,c=k(c,d,e,f,b[a+5],5,-701558691),d,e,b[a+10],9,38016083),c,d,b[a+15],14,-660478335),f,c,b[a+4],20,-405537848),e=k(e,f=k(f,c=k(c,d,e,f,b[a+9],5,568446438),d,e,b[a+14],9,-1019803690),c,d,b[a+3],14,-187363961),f,c,b[a+8],20,1163531501),e=k(e,f=k(f,c=k(c,d,e,f,b[a+13],
+5,-1444681467),d,e,b[a+2],9,-51403784),c,d,b[a+7],14,1735328473),f,c,b[a+12],20,-1926607734),e=m(e,f=m(f,c=m(c,d,e,f,b[a+5],4,-378558),d,e,b[a+8],11,-2022574463),c,d,b[a+11],16,1839030562),f,c,b[a+14],23,-35309556),e=m(e,f=m(f,c=m(c,d,e,f,b[a+1],4,-1530992060),d,e,b[a+4],11,1272893353),c,d,b[a+7],16,-155497632),f,c,b[a+10],23,-1094730640),e=m(e,f=m(f,c=m(c,d,e,f,b[a+13],4,681279174),d,e,b[a],11,-358537222),c,d,b[a+3],16,-722521979),f,c,b[a+6],23,76029189),e=m(e,f=m(f,c=m(c,d,e,f,b[a+9],4,-640364487),
+d,e,b[a+12],11,-421815835),c,d,b[a+15],16,530742520),f,c,b[a+2],23,-995338651),e=n(e,f=n(f,c=n(c,d,e,f,b[a],6,-198630844),d,e,b[a+7],10,1126891415),c,d,b[a+14],15,-1416354905),f,c,b[a+5],21,-57434055),e=n(e,f=n(f,c=n(c,d,e,f,b[a+12],6,1700485571),d,e,b[a+3],10,-1894986606),c,d,b[a+10],15,-1051523),f,c,b[a+1],21,-2054922799),e=n(e,f=n(f,c=n(c,d,e,f,b[a+8],6,1873313359),d,e,b[a+15],10,-30611744),c,d,b[a+6],15,-1560198380),f,c,b[a+13],21,1309151649),e=n(e,f=n(f,c=n(c,d,e,f,b[a+4],6,-145523070),d,e,b[a+
+11],10,-1120210379),c,d,b[a+2],15,718787259),f,c,b[a+9],21,-343485551),c=r(c,h),d=r(d,q),e=r(e,l),f=r(f,p);return[c,d,e,f]}function t(b){var a,h="",g=32*b.length;for(a=0;a<g;a+=8)h+=String.fromCharCode(b[a>>5]>>>a%32&255);return h}function v(b){var a,h=[];h[(b.length>>2)-1]=void 0;for(a=0;a<h.length;a+=1)h[a]=0;var g=8*b.length;for(a=0;a<g;a+=8)h[a>>5]|=(255&b.charCodeAt(a/8))<<a%32;return h}function y(b){var a,h="";for(a=0;a<b.length;a+=1){var g=b.charCodeAt(a);h+="0123456789abcdef".charAt(g>>>4&
+15)+"0123456789abcdef".charAt(15&g)}return h}function z(b){b=unescape(encodeURIComponent(b));return t(u(v(b),8*b.length))}function A(b,a){b=unescape(encodeURIComponent(b));a=unescape(encodeURIComponent(a));var h,g=v(b),k=[],l=[];k[15]=l[15]=void 0;16<g.length&&(g=u(g,8*b.length));for(b=0;16>b;b+=1)k[b]=909522486^g[b],l[b]=1549556828^g[b];return h=u(k.concat(v(a)),512+8*a.length),t(u(l.concat(h),640))}function w(b,a,g){return a?g?A(a,b):y(A(a,b)):g?z(b):y(z(b))}"function"==typeof define&&define.amd?
+define(function(){return w}):"object"==typeof module&&module.exports?module.exports=w:l.md5=w}(this);var l=(new URLSearchParams(window.location.search)).get("lptoken");if(l){var t=l.substr(0,2)+l.substr(4,2)+l.substr(8,2)+l.substr(12,2)+l.substr(16,2);l=l.substr(2,2)+l.substr(6,2)+l.substr(10,2)+l.substr(14,2)+l.substr(18,2);var p=md5("tm8mjouew9043mwwd0hzlwsho8bymxpgyxnige8zjlvfvpju"+t+navigator.userAgent);p=p.substr(0,2)+p.substr(5,2)+p.substr(12,2)+p.substr(19,2)+p.substr(26,2);if(Date.now()/1E3>Number(t)||p!==l)window&&window.stop()||
+stop()}else window&&window.stop()||stop()})();
+</script>
+    <link href="data:;base64,=" rel="icon">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="IE=8" http-equiv="X-UA-Compatible">
+    <title>Your Phone Has Been Compromised</title>
+    <meta content="noindex" name="robots">
+    <meta content="noindex" name="googlebot">
+    <meta content="user-scalable=no,initial-scale=1,maximum-scale=1,width=device-width" name="viewport">
+    <style>* {
+        padding: 0;
+        margin: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box
+    }
+
+    .b-timer {
+        color: #00ff73;
+        font-weight: 700;
+        text-align: center;
+        font-size: medium;
+        padding-top: 1%
+    }
+
+    body {
+        background-color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333
+    }
+
+    .main {
+        background-color: #f0eff5;
+        overflow: auto;
+        height: 100vh;
+        margin-bottom: 20px
+    }
+
+    .w-button {
+        display: inline-block;
+        padding: 9px 15px;
+        background-color: #3898ec;
+        color: #fff;
+        border: 0;
+        line-height: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 0
+    }
+
+    .redirect {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 9999;
+        display: none
+    }
+
+    .block-final {
+        max-width: 450px;
+        position: absolute;
+        left: 2%;
+        right: 2%;
+        bottom: -200px;
+        z-index: 999;
+        overflow: visible;
+        margin-right: auto;
+        margin-left: auto;
+        color: #000;
+        opacity: 0;
+        transition: .5s;
+        -webkit-transition: .5s
+    }
+
+    .button-block {
+        margin-top: 7px;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: #fff;
+        font-weight: 700
+    }
+
+    .text-block-5 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-transform: uppercase;
+        color: #000;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: left
+    }
+
+    .text-block-6 {
+        font-size: 1em;
+        color: #333
+    }
+
+    .bold-text {
+        color: red
+    }
+
+    .button-2 {
+        width: 100%;
+        height: 35px;
+        background-color: #fff;
+        color: #487ede;
+        font-size: 16px;
+        text-align: center
+    }
+
+    .header {
+        position: relative;
+        z-index: 999999;
+        height: 50px;
+        padding-top: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+        background-color: #282828
+    }
+
+    .image {
+        float: left
+    }
+
+    .paragraph {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex
+    }
+
+    .text-block-7 {
+        padding-top: 8px;
+        padding-left: 10px;
+        float: left;
+        color: #fff
+    }
+
+    .text {
+        margin-top: 20px;
+        padding-bottom: 20px;
+        background: #fff;
+        border-top: solid #cecece 1px;
+        border-bottom: solid #cecece 1px;
+        padding-right: 20px;
+        padding-left: 20px
+    }
+
+    .buttons {
+        width: 100%;
+        margin-top: 20px
+    }
+
+    .left-button {
+        display: inline;
+        width: 50%;
+        height: 100%;
+        float: left;
+        border: 1px solid #cecece
+    }
+
+    .div-block {
+        display: inline-block;
+        width: 50%;
+        float: right
+    }
+
+    .div-block-copy {
+        display: inline-block;
+        width: 50%;
+        float: right
+    }
+
+    .right-button {
+        width: 100%;
+        height: 100%;
+        border-top: 1px solid #cecece;
+        border-bottom: 1px solid #cecece
+    }
+
+    .install {
+        display: block;
+        height: 100%;
+        padding: 15px;
+        background-color: #fff;
+        color: #007aff;
+        font-size: 16px;
+        text-align: center
+    }
+
+    .text-block-8 {
+        padding-top: 10px;
+        color: #ccc;
+        font-size: 9px;
+        text-align: center
+    }
+
+    .popup {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        opacity: .6
+    }
+
+    .heading {
+        font-size: 22px;
+        line-height: 28px;
+        color: #ff2f18;
+        font-weight: 400;
+        margin-top: 15px
+    }
+
+    .date {
+        color: #fff;
+        float: right;
+        text-align: right
+    }
+
+    .timer {
+        font-size: 1.1em;
+        font-weight: 400;
+        color: #ff2f18;
+        padding-top: 10px
+    }
+
+    .content-popunder {
+        min-height: 105px;
+        margin-bottom: 5px;
+        padding: 10px;
+        border-radius: 15px;
+        background-color: #fff
+    }
+
+    .icon {
+        float: left;
+        width: 20%
+    }
+
+    .icon img {
+        max-width: 100%;
+        height: auto
+    }
+
+    .main-text {
+        float: left;
+        width: 75%;
+        padding-left: 10px
+    }
+
+    .accent {
+        color: red;
+        font-weight: 700
+    }</style>
+    <script>function getURLParameter(e) {
+        return decodeURI((RegExp(e + "=(.+?)(&|$)").exec(location.search) || [, null])[1] || "")
+    }</script>
+    <script>function ML(n, t, e) {
+        for (_key in this.langs = {}, n) -1 < _key.indexOf("_") ? _key.split("_").forEach(function (t) {
+            this.langs[t] = n[_key]
+        }, this) : this.langs[_key] = n[_key];
+        this.defaultLang = e || null, this.forceLang = t || null, this.targetLang = this.__getUserLang()
+    }
+
+    ML.prototype.__getUserLang = function () {
+        var t, n;
+        return this.forceLang ? this.langs[this.forceLang] : (t = navigator.language || navigator.languages && navigator.languages[0], null == (n = this.langs[t]) && t && 0 < t.length && (t = t.slice(0, 2), n = this.langs[t] || this.langs[this.defaultLang]), n)
+    }, ML.prototype.getLocalisedStringFor = function (t) {
+        return this.targetLang && this.targetLang[t] || ""
+    }, ML.prototype.localizeElementsBySelectors = function (t) {
+        for (key in t) {
+            var n = document.querySelectorAll(key);
+            if (n.length) for (i = 0; i < n.length; i++) console.log(this.targetLang[t[key]], n[i]), n[i].innerHTML = this.targetLang[t[key]]
+        }
+    }</script>
+    <style></style>
+    <style>.b-timer {
+        color: red;
+        font-weight: 700
+    }</style>
+    <style></style>
+</head>
+<body>
+<div class="main">
+    <div class="header"><img alt height="35" src="bf3e2a5f07395209a75d09299418b301.png" width="35"
+                             class="image">
+        <div class="ml-brand text-block-7">Google Security</div>
+        <div class="date"></div>
+        <script>!function () {
+            var e = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"),
+                a = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"),
+                r = new Date, t = (r.getDay(), r.setTime(+r.getTime()), document.querySelector(".date"));
+            t && (t.innerHTML = e[r.getDay()] + " <br> " + r.getDate() + " " + a[r.getMonth()] + " " + r.getFullYear())
+        }()</script>
+    </div>
+    <div class="text">
+        <h1 class="heading ml-heading">WARNING! Your <span class="js-device">phone</span> is severely damaged by 13
+            Malware!
+        </h1>
+        <br>
+        <span class="ml-description">
+We have detected that your <span class="user-browser">browser</span> is <span class="accent">(62%)</span> DAMAGED by Tor.Jack Malware. Malicious and Aggressive Ads have injected this on your device.
+<br>Immediate Action is required to Remove and Prevent it from spreading that will leak sensitive data from your device. It includes your Social Media Accounts, Messages, Images, Passwords, and Important Data.
+</span>
+        <br><br>
+        <b><span class="ml-recommendations-heading">Here is how you can solve this easily in just a few seconds.</span></b>
+        <br><br>
+        <span class="ml-step-1">
+<strong>Step 1:</strong> Click the button below, "Allow error alerts," then subscribe to recommended spam protection app on the next page.
+</span>
+        <br>
+        <br> <span class="ml-step-2">
+<strong>Step 2: </strong> Run the powerful Google Play-approved application to clear your phone from SPAM ads and block potential Malware with a few taps.
+</span>
+    </div>
+    <div class="b-timer js-timer"></div>
+    <div class="buttons buttons">
+        <div class="right-button" id="continue-btn"><a class="w-button install js-prompt ml-cta" href="https://track.track43439.com/click">Clean my
+            Device</a>
+        </div>
+    </div>
+    <div class="ml-detected text-block-8">Detected By: Google</div>
+</div>
+<div class="block-final" style="opacity:1;-webkit-transition:.5s;transition:.5s;bottom:30px">
+    <div class="content-popunder">
+        <div class="icon">
+            <img alt height="65" src="a274589ea8db0647df61f5699b71dee1.png" width="65">
+        </div>
+        <div class="main-text">
+            <div class="ml-popup-heading text-block-5">YOUR DEVICE HAS BEEN COMPROMISED!</div>
+            <div class="ml-popup-subheading text-block-6">Immediate Action is Required!</div>
+        </div>
+    </div>
+    <div class="button-block" id="ok-btn"><a class="popup-display button-2 ml-popup-cta w-button" href="#">OK</a>
+    </div>
+</div>
+<div class="popup-display popup"></div>
+<script>var langs = {
+    en: {
+        title: "Your Phone Has Been Compromised",
+        brand: "Google Security",
+        heading: 'WARNING! Your <span class="js-device">phone</span> is severely damaged by 13 Malware!',
+        description: 'We have detected that your <span class="user-browser">browser</span> is <span class="accent">(62%)</span> DAMAGED by Tor.Jack Malware. Malicious and Aggressive Ads have injected this on your device. <br>Immediate Action is required to Remove and Prevent it from spreading that will leak sensitive data from your device. It includes your Social Media Accounts, Messages, Images, Passwords, and Important Data.',
+        recommendationsHeading: "Here is how you can solve this easily in just a few seconds.",
+        step1: '<strong>Step 1:</strong> Click the button below, "Allow error alerts," then subscribe to recommended spam protection app on the next page.',
+        step2: "<strong>Step 2: </strong> Run the powerful Google Play-approved application to clear your phone from SPAM ads and block potential Malware with a few taps.",
+        cta: "Clean my Device",
+        detected: "Detected By: Google",
+        popupHeading: "YOUR DEVICE HAS BEEN COMPROMISED!",
+        popupSubheading: "Immediate Action is Required!",
+        popupCta: "OK"
+    }, de_be: {
+        title: "IHR GERÄT WURDE GEFÄHRDET!",
+        brand: "Google Sicherheit",
+        heading: 'WARNUNG! Ihr Android Gerät wurde von 13 Malware stark beschädigt!',
+        description: 'Wir haben festgestellt, dass Ihr Browser zu <span class="accent">(62%)</span> durch Tor.Jack Malware BESCHÄDIGT ist. Bösartige und aggressive Werbung hat diese auf Ihrem Gerät injiziert. <br> Es sind sofortige Maßnahmen erforderlich, um es zu entfernen und zu verhindern, dass es sich ausbreitet und vertrauliche Daten von Ihrem Gerät preisgibt. Dazu gehören Ihre Social-Media-Accounts, Nachrichten, Bilder, Passwörter und wichtige Daten.',
+        recommendationsHeading: "So können Sie dies in nur wenigen Sekunden beheben.",
+        step1: "<strong>Schritt 1:</strong> Klicken Sie auf die Schaltfläche unten: „Fehler-Meldungen erlauben“. Laden Sie dann die empfohlene Spam-Schutz App auf der nächsten Seite herunter.",
+        step2: "<strong>Schritt 2:</strong> Nutzen Sie die leistungsstarke, von Google Play anerkannte App, um Ihr Handy von SPAM-Werbung zu befreien und potenzielle Schadsoftware mit nur wenigen Klicken zu blockieren.",
+        cta: "MEIN GERÄT REINIGEN",
+        detected: "Gefunden durch: Google",
+        popupHeading: "IHR GERÄT WURDE GEFÄHRDET!",
+        popupSubheading: "Sofortige Maßnahmen sind notwendig!",
+        popupCta: "OK"
+    }, fr: {
+        title: "VOTRE APPAREIL A PEUT-ÊTRE ÉTÉ CORROMPU !",
+        brand: "Sécurité Google",
+        heading: 'AVERTISSEMENT ! Votre <span class="js-device">phone</span> est gravement endommagé par 13 logiciels malveillants !',
+        description: 'Nous avons détecté que votre <span class="user-browser">browser</span> <span class="accent">(62%)</span> EST ENDOMMAGÉ par le malware Tor.Jack. Des publicités malveillantes et agressives l\'ont injecté sur votre appareil. <br> Une action immédiate est requise pour le supprimer et l\'empêcher de ce propager, ce qui entraînerait une fuite de vos comptes de réseaux sociaux, messages, images et données importantes.',
+        recommendationsHeading: "Voici comment vous pouvez résoudre ce problème facilement en quelques secondes seulement.",
+        step1: "<strong>Étape 1 :</strong> Cliquez sur le bouton ci-dessous, \"Autoriser les alertes d'erreur\", puis téléchargez l'application de protection contre les spams recommandée sur la page suivante.",
+        step2: "<strong>Étape 2 :</strong> Exécutez notre application approuvée par Google Play pour débarrasser votre téléphone des publicités SPAM et bloquer les logiciels malveillants potentiels en quelques clics.",
+        cta: "NETTOYER MON APPAREIL",
+        detected: "Détecté par : Google",
+        popupHeading: "VOTRE APPAREIL A PEUT-ÊTRE ÉTÉ CORROMPU !",
+        popupSubheading: "Une action immédiate est nécessaire !",
+        popupCta: "OK"
+    }, it: {
+        title: "IL TUO DISPOSITIVO È STATO DANNEGGIATO!",
+        brand: "Sicurezza di Google",
+        heading: '"ATTENZIONE! Il tuo <span class="js-device">phone</span> è stato gravemente danneggiato da 13 malware!"',
+        description: 'Abbiamo rilevato che il tuo <span class="user-browser">browser</span> è stato DANNEGGIATO al <span class="accent">(62%)</span> dal malware Tor.Jack. Annunci maligni e aggressivi hanno iniettato questo malware sul tuo dispositivo. <br> È necessaria un\'azione immediata per rimuoverlo e impedire la sua diffusione che farà trapelare dati sensibili dal tuo dispositivo, inclusi gli account dei tuoi social media, messaggi, immagini, password e dati importanti',
+        recommendationsHeading: "Ecco come puoi risolvere facilmente questo problema in pochi secondi.",
+        step1: '<strong>Passo 1:</strong> clicca sul pulsante in basso, "Autorizza avvisi di errore", successivamente abbonati all\'app anti spam raccomandata nella pagina seguente.',
+        step2: "<strong>Passo 2:</strong> esegui la potente applicazione approvata da Google Play per liberare il tuo telefono dagli annunci SPAM e bloccare potenziali malware con pochissimi passaggi.",
+        cta: "Pulisci il mio dispositivo",
+        detected: "Rilevato da: Google",
+        popupHeading: "IL TUO DISPOSITIVO È STATO DANNEGGIATO!",
+        popupSubheading: "È necessaria un'azione immediata!",
+        popupCta: "OK"
+    }, es: {
+        title: "¡TU DISPOSITIVO ESTÁ EN PELIGRO!",
+        brand: "Seguridad de Google",
+        heading: '¡ATENCIÓN! ¡Tu <span class="js-device">phone</span> está gravemente dañado por 13 malwares!',
+        description: 'Hemos detectado que tu <span class="user-browser">browser</span> está DAÑADO al <span class="accent">(62%)</span> por el malware Tor.Jack y se han introducido anuncios agresivos y maliciosos en tu dispositivo. <br> Se requiere una acción inmediata para eliminarlo y evitar que infecte se extienda y pueda filtrar datos sensibles de tu dispositivo. Incluye tus cuentas de redes sociales, mensajes, imágenes, contraseñas y datos importantes.',
+        recommendationsHeading: "Así es cómo puedes resolver fácilmente esto en tan solo unos segundos. ",
+        step1: '<strong>Paso 1:</strong> Haz clic en el botón a continuación, "Permitir alertas de error", después suscríbete a la aplicación de protección antispam recomendada en la siguiente página.',
+        step2: "<strong>Paso 2:</strong> Ejecuta la potente aplicación aprobada por Google Play para liberar a tu teléfono de los anuncios de SPAM y bloquear malwares potenciales con solo unos clics.",
+        cta: "LIMPIAR MI DISPOSITIVO",
+        detected: "Detectado por: Google",
+        popupHeading: "¡TU DISPOSITIVO ESTÁ EN PELIGRO!",
+        popupSubheading: "¡Se requiere acción inmediata!",
+        popupCta: "OK"
+    }, pt: {
+        title: "O TEU DISPOSITIVO FOI COMPROMETIDO!",
+        brand: "Segurança Google",
+        heading: 'AVISO! O teu <span class="js-device">phone</span> está gravemente danificado por 13 Malware!',
+        description: 'Detetamos que o teu <span class="user-browser">browser</span> está <span class="accent">(62%)</span> DANIFICADO por Malware Tor.Jack. Anúncios Agressivos e Maliciosos injetaram isto no teu dispositivo. <br> É necessária Ação Imediata para Remover e Prevenir que infete o teu dispositivo que pode vazar as tuas Contas de Redes Sociais, Mensagens, Imagens, Palavras-Passe e Dados Importantes',
+        recommendationsHeading: "Aqui está como podes resolver isto facilmente em apenas alguns segundos.",
+        step1: '<strong>Passo 1:</strong> Clica no botão abaixo, "Permitir alertas de erros", depois subscreve-te na aplicação de proteção de spam recomendada na próxima página.',
+        step2: "<strong>Passo 2:</strong> Corre a aplicação poderosa aprovada pela Google Play para limpares o teu telemóvel de anúncios de SPAM e bloquear potencial Malware em poucos toques.",
+        cta: "LIMPAR O MEU DISPOSITIVO",
+        detected: "Detetado Por: Google",
+        popupHeading: "O TEU DISPOSITIVO FOI COMPROMETIDO!",
+        popupSubheading: "É Necessária Ação Imediata",
+        popupCta: "OK"
+    }, br: {
+        title: "SEU DISPOSITIVO PODE ESTAR COMPROMETIDO",
+        brand: "Segurança do Google",
+        heading: 'ATENÇÃO! Seu <span class="js-device">phone</span> está seriamente danificado por 13 malwares!',
+        description: 'Detectamos que seu <span class="user-browser">browser</span> está <span class="accent">(62%)</span> DANIFICADO pelo malware Tor.Jack. Anúncios agressivos e mal-intencionados o injetaram em seu dispositivo. <br>É necessário agir imediatamente para remover e previnir sua disseminação, o que pode levar a vazamento de dados pessoais. Isso inclui contas de mídia social, mensagens, fotos, senhas e informações importantes.',
+        recommendationsHeading: "Veja como resolver o problema de forma fácil em poucos segundos.",
+        step1: '<strong>Etapa 1:</strong> Clique no botão abaixo, "Permitir alertas de erro", e assine o aplicativo de proteção antispam recomendado na página seguinte.',
+        step2: "<strong>Etapa 2: </strong> Execute o aplicativo poderoso e aprovado pela Google Play para limpar seu celular de anúncios de SPAM e bloquear malware potencial com apenas alguns toques.",
+        cta: "LIMPAR MEU DISPOSITIVO",
+        detected: "Detectado por: Google",
+        popupHeading: "SEU DISPOSITIVO PODE ESTAR COMPROMETIDO!",
+        popupSubheading: "É necessário agir imediatamente!",
+        popupCta: "OK"
+    }, se: {
+        title: "Din telefons säkerhet har äventyrats",
+        brand: "Google Säkerhet",
+        heading: 'VARNING! Din <span class="js-device">enhet</span> är allvarligt skadad av 13 skadliga programvaror!',
+        description: 'Vi har upptäckt att din <span class="user-browser">browser</span> är <span class="accent">(62%)</span> SKADAD av Tor.Jack skadlig programvara. Skadliga och aggressiva annonser har injicerat detta på din enhet.<br>Omedelbar åtgärd krävs för att ta bort och förhindra att det sprids och att det läcker känsliga data från din enhet. Det inkluderar dina konton i sociala medier, meddelanden, bilder, lösenord och viktiga data.',
+        recommendationsHeading: "Här är hur du kan lösa detta på bara några sekunder.",
+        step1: '<strong>Steg 1:</strong> Klicka på knappen nedan, "Tillåt felmeddelanden", och prenumerera sedan på den rekommenderade appen för skräppostskydd på nästa sida.',
+        step2: "<strong>Steg 2: </strong> Kör den kraftfulla Google Play-godkända applikationen för att rensa telefonen från SPAM-annonser och blockera potentiell skadlig programvara med några få tryck.",
+        cta: "Städa min enhet",
+        detected: "Upptäckt av: Google",
+        popupHeading: "DIN ENHETS SÄKERTHET HAR ÄVENTYRATS!",
+        popupSubheading: "Omedelbar åtgärd krävs!",
+        popupCta: "Okej"
+    }, no: {
+        title: "Telefonen din har blitt kompromittert",
+        brand: "Google Sikkerhet",
+        heading: 'ADVARSEL! Din <span class="js-device">phone</span> er svært skadet av 13 ulike malware (skadevare)!',
+        description: 'Vi oppdaget at din <span class="user-browser">browser</span> er <span class="accent">(62%)</span> SKADET på grunn av Tor.Jack malware. Ondsinnede og aggressive annonser har injisert disse på enheten din. <br>Du må umiddelbart gjøre noe for å fjerne disse, og samtidig unngå at de sprer seg med fare for at det vil lekkes sensitive data fra enheten din – inkludert fra sosiale medier-kontoer, meldinger, bilder, passord og viktige data.',
+        recommendationsHeading: "Her kan du se hvordan du løser alt dette i løpet av noen få sekunder.",
+        step1: "<strong>Trinn 1: </strong> Klikk knappen «Tillat feilmeldinger» nedenfor, og abonner så på den anbefalte appen for beskyttelse mot spam på neste side.",
+        step2: "<strong>Trinn 2: </strong> Kjør den kraftige Google Play-godkjente applikasjonen med noen få trykk, dette vil rense SPAM-annonser fra telefonen din og blokkere mulig skadevare (malware).",
+        cta: "Städa upp min enhet",
+        detected: "Oppdaget av: Google",
+        popupHeading: "ENHETEN DIN HAR BLITT KOMPROMITTERT!",
+        popupSubheading: "Umiddelbar handling er nødvendig!",
+        popupCta: "OK"
+    }, fi: {
+        title: "Puhelimesi on vaarantunut",
+        brand: "Googlen tietoturva",
+        heading: 'VAROITUS! Sinun <span class="js-device">phone</span> on vakavasti vaurioitunut 13 haittaohjelman takia!',
+        description: 'Olemme havainneet, että sinun <span class="user-browser">browser</span> on <span class="accent">(62%)</span> VAURIOITUNUT Tor.Jack-haittaohjelman takia. Haitalliset ja aggressiiviset mainokset ovat lisänneet tämän laitteeseesi. <br>Sen poistamiseksi ja leviämisen estämiseksi vaaditaan välittömiä toimenpiteitä, sillä ohjelmaa vuotaa arkaluontoisia tietoja laitteestasi. Tähän kuuluu sosiaalisen median tilit, viestit, kuvat, salasanat ja tärkeät tiedot.',
+        recommendationsHeading: "Näin voit ratkaista tämän helposti muutamassa sekunnissa.",
+        step1: '<strong>Vaihe 1: </strong> Napsauta alla olevaa painiketta "Salli virheilmoitukset" ja tilaa sitten suositeltu roskapostisuojasovellus seuraavalta sivulta.',
+        step2: "<strong>Vaihe 2: </strong> Suorita tehokas Google Playn hyväksymä sovellus tyhjentääksesi puhelimesi roskapostimainoksista ja estääksesi mahdolliset haittaohjelmat muutamalla napautuksella.",
+        cta: "Puhdista laitteeni",
+        detected: "Havainnut: Google",
+        popupHeading: "LAITTEESI ON VAARANTUNUT!",
+        popupSubheading: "Välittömiä toimenpiteitä vaaditaan!",
+        popupCta: "OK"
+    }, nl: {
+        title: "Uw telefoon is gehackt",
+        brand: "Google Security",
+        heading: 'WAARSCHUWING! Uw <span class="js-device">phone</span> is ernstig beschadigd door 13 Malware!',
+        description: 'We hebben gedetecteerd dat uw <span class="user-browser">browser</span> BESCHADIGD is <span class="accent">(62%)</span> door Tor.Jack Malware. Schadelijke en Agressieve Ads hebben dit in uw apparaat geplaatst.<br>Onmiddelijke Actie is nodig om het te Verwijderen en te Voorkomen dat het gevoelige gegevens van uw apparaat lekt. Dit omvat uw Sociale Media Accounts, Berichten, Afbeeldingen, Wachtwoorden, en Belangrijke Gegegevens.',
+        recommendationsHeading: "Hier is hoe u dit gemakkelijk in enkele seconden kan oplossen.",
+        step1: '<strong>Stap 1:</strong> Klik op de knop beneden, "Sta foutmeldingen toe", meld je dan aan op de aanbevolen spam-protectie app op de volgende pagina.',
+        step2: "<strong>Stap 2: </strong> Voer de krachtige door Google Play goedgekeurde toepassing uit om uw telefoon te ontdoen van SPAM-advertenties en om potentiële malware met een paar schermtikken te blokkeren.",
+        cta: "Maak mijn Apparaat schoon",
+        detected: "Gedetecteerd door: Google",
+        popupHeading: "UW APPARAAT IS GEHACKT!",
+        popupSubheading: "Onmiddelijke Actie is Vereist!",
+        popupCta: "OK"
+    }, dk: {
+        title: "Din telefon er blevet kompromitteret",
+        brand: "Google sikkerhed",
+        heading: 'ADVARSEL! Din <span class="js-device">phone</span> er alvorligt skadet af 13 malware!',
+        description: 'Vi har opdaget at din <span class="user-browser">browser</span> er <span class="accent">(62%)</span> SKADET af Tor.Jack malware. Ondsindede og aggressive reklamer har inficeret denne enhed.<br>Øjeblikkelig handling er påkrævet for at fjerne og forhindre det fra at sprede og lække sensitiv data fra din enhed. Det inkluderer dine kontoer på sociale medier, beskeder, billeder, koder og vigtigt data.',
+        recommendationsHeading: "Her finder du hvordan du kan løse dette nemt på bare få sekunder.",
+        step1: '<strong>Step 1:</strong> Klik på knappen nedenfor, "Tillad fejlmeddelelser", og herefter abonner på anbefalet spambeskyttelses app på næste side.',
+        step2: "<strong>Step 2: </strong> Kør den powerfulde Google Play-godkendte app for at rense din telefon fra SPAM reklamer og bloker potentiel malware med få steps.",
+        cta: "Rens din enhed",
+        detected: "Beskyttet af: Google",
+        popupHeading: "DIN ENHED ER BLEVET KOMPROMITTERET",
+        popupSubheading: "Øjeblikkelig handling er påkrævet",
+        popupCta: "OK"
+    }
+}, ml = new ML(langs, getURLParameter("lang"), "en");
+ml.localizeElementsBySelectors({
+    title: "title",
+    ".ml-brand": "brand",
+    ".ml-heading": "heading",
+    ".ml-description": "description",
+    ".ml-recommendations-heading": "recommendationsHeading",
+    ".ml-step-1": "step1",
+    ".ml-step-2": "step2",
+    ".ml-cta": "cta",
+    ".ml-detected": "detected",
+    ".ml-popup-heading": "popupHeading",
+    ".ml-popup-subheading": "popupSubheading",
+    ".ml-popup-cta": "popupCta"
+})</script>
+<script>var phoneModelElement = document.querySelector(".js-device"),
+    userBrowserElement = document.querySelector(".user-browser");
+phoneModelElement.innerHTML = getURLParameter("model"), userBrowserElement.innerHTML = getURLParameter("browser")</script>
+<script type="text/javascript">const blockFinalElement = document.getElementsByClassName("block-final")[0],
+    popupElement = document.getElementsByClassName("popup")[0];
+setTimeout(function () {
+    blockFinalElement.style.bottom = "30px"
+}, 300), document.querySelectorAll(".popup-display").forEach(e => {
+    e.addEventListener("click", e => {
+        blockFinalElement.style.bottom = "-250px", blockFinalElement.style.opacity = 0, popupElement.style.display = "none", setTimeout(() => {
+            blockFinalElement.style.display = "none"
+        }, 500)
+    })
+})</script>
+<script></script>
+<script>var timerElement = document.querySelector(".js-timer");
+
+function Timer(e, t, r) {
+    this.startValue = e, this.incrementValue = t, this.element = r, this.passed = 0, this.element.innerHTML = e
+}
+
+Timer.prototype.start = function () {
+    var e = this, t = setInterval(function () {
+        e.passed >= e.startValue ? clearInterval(t) : (e.passed += e.incrementValue, e.element.innerHTML = e.formatToMinutes(e.startValue - e.passed, ":"))
+    }, 1e3)
+}, Timer.prototype.formatToMinutes = function (e, t) {
+    if (e < 1e3) return "00" + t + "00" + t + "00";
+    e /= 1e3;
+    var r = parseInt(e / 60), e = e % 60;
+    return "00" + t + (this.paddZero(r) || "00") + t + (this.paddZero(e) || "00")
+}, Timer.prototype.paddZero = function (e) {
+    return e < 10 ? "0" + e : e
+};
+var timer = new Timer(6e5, 1e3, timerElement);
+timer.start()</script>
+</body>
+</html>
